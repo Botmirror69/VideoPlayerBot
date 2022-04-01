@@ -1,4 +1,4 @@
-# Telegram Video Player Bot (Py-TgCalls)
+# Telegram Video Player Bot 
 ![GitHub Repo stars](https://img.shields.io/github/stars/AsmSafone/VideoPlayerBot?color=blue&style=flat)
 ![GitHub forks](https://img.shields.io/github/forks/AsmSafone/VideoPlayerBot?color=green&style=flat)
 ![GitHub issues](https://img.shields.io/github/issues/AsmSafone/VideoPlayerBot)
