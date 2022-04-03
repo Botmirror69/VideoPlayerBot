@@ -370,9 +370,9 @@ async def get_raw_files(link, seek=False):
     if seek:
         start=str(seek['start'])
         end=str(seek['end'])
-        command = ["ffmpeg", "-y", "-ss", start, "-i", link, "-t", end, "-f", "s16le", "-ac", "1", "-ar", "48000", raw_audio, "-f", "rawvideo", '-r', '30', '-pix_fmt', 'yuv420p', '-vf', f'scale={width}:{height}', raw_video]
+        command = ["ffmpeg", "-y", "-ss", start, "-i", link, "-i", "https://telegra.ph/file/1f9f9a7e49978b17da41e.jpg", "-filter_complex", "overlay=10:10", "-t", end, "-f", "s16le", "-ac", "1", "-ar", "48000", raw_audio, "-f", "rawvideo", '-r', '30', '-pix_fmt', 'yuv420p', '-vf', f'scale={width}:{height}', raw_video]
     else:
-        command = ["ffmpeg", "-y", "-i", link, "-f", "s16le", "-ac", "1", "-ar", "48000", raw_audio, "-f", "rawvideo", '-r', '30', '-pix_fmt', 'yuv420p', '-vf', f'scale={width}:{height}', raw_video]
+        command = ["ffmpeg", "-y", "-i", link, "-i", "https://telegra.ph/file/1f9f9a7e49978b17da41e.jpg", "-filter_complex", "overlay=10:10", "-f", "s16le", "-ac", "1", "-ar", "48000", raw_audio, "-f", "rawvideo", '-r', '30', '-pix_fmt', 'yuv420p', '-vf', f'scale={width}:{height}', raw_video]
     process = await asyncio.create_subprocess_exec(
         *command,
         stdout=ffmpeg_log,
